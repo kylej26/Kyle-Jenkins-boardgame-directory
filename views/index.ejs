@@ -1,0 +1,31 @@
+<%- include('partials/header.ejs') %>
+<link href="/css/index.css" rel="stylesheet" type="text/css">
+<head>
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+
+  <ul>
+    <% game.forEach(game => { %>
+      <li> 
+        <span class="gamename"><%= game.Name %></span></li> - 
+        <li> <span class="played">Times played: <%= game.times_played %></span></li>
+        
+        <li><span class="recent">Most Recent Session: </span>
+        <% if (game.MostRecent && game.MostRecent instanceof Date) { %>
+          <%= game.MostRecent.toLocaleString('en-US', { weekday: 'long', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' }) %>
+        <% } else { %>
+          Game has not been played
+        <% } %>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
+
+<a href="/add-game"><button>Add Game</button></a>
+<a href="/add-game-session"><button>Add Session</button></a>
+<a href="/edit-game"><button>Edit Game</button></a>
+
+<%- include ('partials/footer.ejs') %>

@@ -1,0 +1,24 @@
+body { 
+    background: url(https://t4.ftcdn.net/jpg/04/25/74/29/360_F_425742955_QH2nJTiyl7N0YWzbCjQoH6fEGyNaiFrz.jpg);
+    background-size: 2080px 1000px;
+    background-repeat: no-repeat;
+    font-family: Georgia;
+ }
+
+ button{
+    font-weight: bold;
+    font-family: Georgia;
+    background-color: navy ;
+    color: whitesmoke;
+    padding: 10px 15px;
+}
+button:hover{
+    background-color: aqua;
+}
+label{
+    font-size: 20px;
+    color: navy;
+}
+select{
+    border: 2px solid navy;
+}

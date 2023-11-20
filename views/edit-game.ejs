@@ -1,0 +1,31 @@
+
+<%- include('partials/header.ejs') %>
+<link href="/css/edit.css" rel="stylesheet" type="text/css">
+
+<head>
+  <title>Edit Game</title>
+</head>
+<body>
+  <h1>Edit Game</h1>
+
+  <form action="/edit-game" method="post">
+    <div class="form-group">
+        <label for="selectedGame">Select a Game:</label>
+        <select id="selectedGame" name="selectedGame">
+      <% games.forEach(game => { %>
+        <option value="<%= game.gameid %>"><%= game.Name %></option>
+      <% }); %>
+        </select>
+    </div>
+        <div class="form-group">
+        <label for="newGameName">New Game Name:</label>
+        <input class="newgame" type="text" id="newGameName" name="newGameName" required>
+    </div>
+   
+
+    <button type="submit">Submit Edit</button>
+  </form>
+</body>
+</html>
+
+<%- include('partials/footer.ejs') %>

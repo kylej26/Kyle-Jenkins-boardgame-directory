@@ -1,0 +1,28 @@
+<%- include ('partials/header.ejs') %>
+
+<link href="/css/addsession.css" rel="stylesheet" type="text/css">
+
+
+<head>
+  <title>Add Game Session</title>
+</head>
+<body>
+  <h1>Add a New Game Session</h1>
+
+
+  <form action="/add-game-session" method="post">
+    <label for="gameId">Select Game:</label>
+    <select id="gameId" name="gameId" required>
+      <% games.forEach(game => { %>
+        <option value="<%= game.gameid %>"><%= game.Name %></option>
+      <% }); %>
+    </select>
+
+
+    <button type="submit">Add Game Session</button>
+  </form>
+</body>
+</html>
+
+<%- include('partials/footer.ejs') %>
+

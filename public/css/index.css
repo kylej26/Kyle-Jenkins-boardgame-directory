@@ -1,24 +1,27 @@
 body { 
    background: url(https://t4.ftcdn.net/jpg/04/25/74/29/360_F_425742955_QH2nJTiyl7N0YWzbCjQoH6fEGyNaiFrz.jpg);
-   background-size: 100% 240%;
+   background-size: 100% 430%;
    background-repeat: no-repeat;
    font-family: Georgia;
 }
  ul{
     list-style-type: none;
+    
+    text-align: left;
+
  }
  .gamename{
     font-weight: bold;
     position: relative;
  }
 .played{
-margin-left: 105px;
+margin-left: 10px;
 color: white;
 }
 
 .recent{
-    margin-left: 105px;
-    
+    margin-left: 70px;
+    display: inline-block;
     color:black;
 }
 

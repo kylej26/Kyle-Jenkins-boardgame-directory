@@ -1,4 +1,7 @@
 -- TODO: add mysql/mariadb table definitions
+CREATE DATABASE IF NOT EXISTS miechallenge;
+USE miechallenge;
+DROP TABLE IF EXISTS miechallenge;
 CREATE TABLE `game` (
 	`gameid` INT(11) NOT NULL AUTO_INCREMENT,
 	`Name` VARCHAR(30) NOT NULL,

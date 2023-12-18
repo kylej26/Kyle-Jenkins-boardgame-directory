@@ -1,13 +1,12 @@
 {
-    "app": {
-      "port": 3000
-    },
-    "database": {
-      "host": "localhost",
-      "port": 3306,
-      "name": "miechallenge",
-      "user": "app",
-      "password": "wonderful"
-    }
+  "app": {
+    "port": 3000
+  },
+  "database": {
+    "host": "mariadb", 
+    "port": 3306,
+    "name": "miechallenge",
+    "user": "app",
+    "password": "wonderful"
   }
-  
+}

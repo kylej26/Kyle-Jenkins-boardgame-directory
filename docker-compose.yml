@@ -1,0 +1,57 @@
+version: '3.9'
+services:
+  mariadb:
+    image: mariadb:latest
+    command: --log-bin --log-basename=mariadb
+    restart: always
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/0_schema.sql
+    ports:
+      - "3306:3306"  
+    expose:
+      - 3306
+    environment:
+      MARIADB_DATABSE: miechallenge
+      MARIADB_USER: app
+      MARIADB_ROOT_PASSWORD: wonderful
+    healthcheck:
+      test: "mysql -uapp -pwonderful -e 'select 1;'"
+      interval: 1s
+      retries: 10
+      
+    networks:
+      - internalnet
+
+  nodeapp: 
+    environment:
+      NODE-ENV: development
+      PORT: 3000
+      MARIADB_ROOT_PASSWORD: wonderful
+      MARIADB_HOSTNAME: mariadb
+      command: npm start
+   
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      
+    ports:
+      - 3000:3000
+    depends_on:
+      - mariadb
+
+   
+    links:
+      - mariadb:mariadb
+    
+
+    networks:
+      - internalnet
+
+
+
+
+networks:
+  internalnet:
+    driver: bridge
+
+
